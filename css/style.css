@@ -158,17 +158,47 @@ nav.primary a[aria-current="page"] {
   margin: 0;
 }
 
-.hero-image {
+.exhibition-feature {
+  display: block;
   margin-top: clamp(36px, 6vw, 64px);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.exhibition-feature-image {
+  display: block;
   border-radius: 2px;
   overflow: hidden;
   border: 1px solid var(--line);
 }
 
-.hero-image img {
+.exhibition-feature-image img {
+  display: block;
   width: 100%;
   height: clamp(220px, 40vw, 460px);
   object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.6s cubic-bezier(.2,.7,.3,1);
+}
+
+.exhibition-feature:hover .exhibition-feature-image img,
+.exhibition-feature:focus-visible .exhibition-feature-image img {
+  transform: scale(1.06);
+}
+
+.exhibition-feature-caption {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+  transition: color 0.25s ease;
+}
+
+.exhibition-feature:hover .exhibition-feature-caption,
+.exhibition-feature:focus-visible .exhibition-feature-caption {
+  color: var(--verdigris);
 }
 
 /* ============================================================
@@ -485,6 +515,55 @@ nav.primary a[aria-current="page"] {
 
 .about-copy p:last-child { margin-bottom: 0; }
 
+.credentials {
+  margin-top: clamp(32px, 5vw, 48px);
+  padding-top: clamp(28px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(24px, 3.5vw, 36px);
+}
+
+.credentials-heading {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--verdigris);
+  margin: 0 0 14px;
+}
+
+.credentials-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.credentials-title {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  margin: 0 0 3px;
+  color: var(--ink);
+}
+
+.credentials-title a { text-decoration: underline; text-underline-offset: 2px; }
+.credentials-title a:hover { color: var(--verdigris); }
+
+.credentials-meta {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--stone);
+  margin: 0;
+}
+
+.credentials-software {
+  font-size: 0.95rem;
+  color: #3a3a3d;
+  margin: 0;
+  max-width: 62ch;
+}
+
 /* ============================================================
    Contact page ("find me")
    ============================================================ */
@@ -583,33 +662,6 @@ nav.primary a[aria-current="page"] {
 .site-footer a { color: var(--stone); text-decoration: none; }
 .site-footer a:hover { color: var(--verdigris); }
 
-/* ============================================================
-   Exhibition banner (gallery intro callout)
-   ============================================================ */
-.exhibition-banner {
-  margin-top: 24px;
-  padding: 16px 20px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  display: inline-block;
-}
-
-.exhibition-banner .eyebrow {
-  margin: 0 0 8px;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--stone);
-}
-
-.exhibition-banner a {
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.exhibition-banner a:hover { color: var(--verdigris); }
 
 /* ============================================================
    Exhibition page (Momentukininkė)
