@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://gabijamalina.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/momentukininke-header.jpg</image:loc>
+      <image:title>Momentukininkė: Painter of Moments — solo exhibition banner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gabijamalina.com/paintings/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/paintings/piece-01.jpg</image:loc>
+      <image:title>Lady with A Dog — oil on canvas painting by Gabija Malina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/paintings/piece-02.jpg</image:loc>
+      <image:title>Quiet Room — acrylic on panel painting by Gabija Malina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/paintings/piece-03.jpg</image:loc>
+      <image:title>Low Tide — oil on canvas painting by Gabija Malina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/paintings/piece-04.jpg</image:loc>
+      <image:title>Interior, Late Afternoon — oil on canvas painting by Gabija Malina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/paintings/piece-05.jpg</image:loc>
+      <image:title>Field Notes — acrylic on canvas painting by Gabija Malina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/paintings/piece-06.jpg</image:loc>
+      <image:title>Untitled Study II — oil on panel painting by Gabija Malina</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gabijamalina.com/3d-work/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/3d-work/piece-01.jpg</image:loc>
+      <image:title>Vessel Study — 3D render by Gabija Malina, Blender and Substance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/3d-work/piece-02.jpg</image:loc>
+      <image:title>Character Bust 03 — 3D render by Gabija Malina, ZBrush</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/3d-work/piece-03.jpg</image:loc>
+      <image:title>Interior Fragment — 3D render by Gabija Malina, Blender, Cycles render</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/3d-work/piece-04.jpg</image:loc>
+      <image:title>Material Study — Glass &amp; Oxide — 3D render by Gabija Malina, Blender and Substance</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gabijamalina.com/momentukininke.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2024-2025-02.jpg</image:loc>
+      <image:title>Holding On — portrait, Momentukininkė, 2024–2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2024-2025-01.jpg</image:loc>
+      <image:title>Mkay — portrait, Momentukininkė, 2024–2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2024-2025-04.jpg</image:loc>
+      <image:title>Zarasai — portrait, Momentukininkė, 2024–2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2024-2025-03.jpg</image:loc>
+      <image:title>Mama — portrait, Momentukininkė, 2024–2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2024-2025-05.jpg</image:loc>
+      <image:title>Tete — portrait, Momentukininkė, 2024–2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2024-2025-07.jpg</image:loc>
+      <image:title>Medis — portrait, Momentukininkė, 2024–2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2024-2025-06.jpg</image:loc>
+      <image:title>Mamos Fotely — portrait, Momentukininkė, 2024–2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2023august_01.jpg</image:loc>
+      <image:title>Vacelis — graphite portrait, Momentukininkė, 2023</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2023august_02.jpg</image:loc>
+      <image:title>Baba — graphite portrait, Momentukininkė, 2023</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2023august_03.jpg</image:loc>
+      <image:title>Senelis — graphite portrait, Momentukininkė, 2023</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/2023august_04.jpg</image:loc>
+      <image:title>Lionė — graphite portrait, Momentukininkė, 2023</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/momentukininke/momentukininke-header.jpg</image:loc>
+      <image:title>Momentukininkė: Painter of Moments — Gallery The Closet, Busan</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gabijamalina.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://gabijamalina.com/images/about.jpg</image:loc>
+      <image:title>Gabija Malina in her studio, surrounded by portrait paintings and drawings</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gabijamalina.com/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
