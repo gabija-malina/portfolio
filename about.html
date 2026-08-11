@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {}
+})();
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/icon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon/icon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+<link rel="canonical" href="https://gabijamalina.com/about.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Gabija Malina</title>
 <meta name="description" content="About Gabija Malina — painter and 3D artist.">
@@ -24,7 +40,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">Gabija Malina<span>.</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <div class="nav-wrap">
     <nav class="primary">
       <a href="index.html">Home</a>
       <a href="paintings/index.html">Paintings</a>
@@ -33,6 +49,18 @@
       <a href="about.html" aria-current="page">About</a>
       <a href="contact.html">Find Me</a>
     </nav>
+      <div class="lang-switch" aria-label="Language">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.6 3.8 5.8 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.8-3.8-9s1.4-6.4 3.8-9z"/></svg>
+        <span class="lang-current">EN</span>
+        <span class="lang-sep">/</span>
+        <a href="lt/about.html">LT</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme-toggle>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
@@ -41,12 +69,12 @@
     <img src="images/about.jpg" alt="Gabija Malina in her studio, surrounded by portrait paintings and drawings">
     <div class="about-hero-copy">
       <p class="hero-eyebrow">About</p>
-      <h1>Working across paint and polygons.</h1>
-      <p>My name is Gabija Malinauskaitė and I am an artist working across traditional and digital mediums, exploring storytelling through painting, 3D modeling, and animation.</p>
-      <p>My artistic practice is centered around people, emotions, and the small details that make everyday moments meaningful. I am drawn to portraiture, character-driven narratives, and the atmosphere of lived-in spaces — capturing not only how something looks, but how it feels.</p>
-      <p>I began my journey in traditional art before expanding into digital creation. After studying 3D Animation at Dongseo University, I developed a passion for combining technical skills with artistic expression.</p>
-      <p>While my 3D work focuses on creating detailed, stylized worlds and assets, painting remains an important part of my creative process. Working with traditional mediums such as oil, acryl, gouache, and pastels allows me to explore color, texture, and human expression in a more intuitive way.</p>
-      <p>I am inspired by memories, nature, old photographs, and the stories hidden within ordinary moments. Whether through a painted portrait or a digital environment, my goal is to create work that feels personal, atmospheric, and emotionally resonant.</p>
+      <h1>Painting people, building worlds.</h1>
+      <p>My name is Gabija Malinauskaitė, and I am a multidisciplinary artist working across painting, 3D modeling, and animation.</p>
+      <p>My art is centered around people, emotions, and the small details that make everyday moments meaningful. I am drawn to portraiture, character-driven narratives, and the atmosphere of lived-in spaces - capturing not only how something looks, but how it feels.</p>
+      <p>I started with traditional art and later moved into 3D animation, studying at Dongseo University in South Korea. Working digitally taught me to think about art in a different way, while painting remained a constant part of how I explore ideas.</p>
+      <p>In my 3D work, I enjoy building detailed environments and characters and figuring out how they fit into a world. Painting gives me a different kind of freedom. It is a more intuitive way to explore color, texture, light, and human expression. I mostly work with oils, acrylics, gouache, and pastels, i especially enjoy the physicality of working directly with the material.</p>
+      <p>A lot of my inspiration comes from things that feel familiar: old photographs, nature, places I remember, and, most importantly, the people around me. I’m interested in making work that has a sense of history to it - something that feels like it existed before you saw it.</p>
     </div>
   </section>
 

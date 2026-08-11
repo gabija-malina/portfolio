@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {}
+})();
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/icon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../images/favicon/icon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../images/favicon/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+<link rel="canonical" href="https://gabijamalina.com/lt/about.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apie — Gabija Malina</title>
+<meta name="description" content="Apie Gabiją Maliną — dailininkę ir 3D menininkę.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gabijamalina.com/lt/about.html">
+<meta property="og:title" content="Apie — Gabija Malina">
+<meta property="og:description" content="Apie Gabiją Maliną — dailininkę ir 3D menininkę.">
+<meta property="og:image" content="https://gabijamalina.com/images/about.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apie — Gabija Malina">
+<meta name="twitter:description" content="Apie Gabiją Maliną — dailininkę ir 3D menininkę.">
+<meta name="twitter:image" content="https://gabijamalina.com/images/about.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Gabija Malina<span>.</span></a>
+    <div class="nav-wrap">
+    <nav class="primary">
+      <a href="index.html">Pagrindinis</a>
+      <a href="paintings/index.html">Tapyba</a>
+      <a href="3d-work/index.html">3D darbai</a>
+      <a href="momentukininke.html">Parodos</a>
+      <a href="about.html" aria-current="page">Apie</a>
+      <a href="contact.html">Kontaktai</a>
+    </nav>
+      <div class="lang-switch" aria-label="Kalba">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.6 3.8 5.8 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.8-3.8-9s1.4-6.4 3.8-9z"/></svg>
+        <a href="../about.html">EN</a>
+        <span class="lang-sep">/</span>
+        <span class="lang-current">LT</span>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Perjungti tamsųjį režimą" data-theme-toggle>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Atidaryti meniu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero wrap">
+    <img src="../images/about.jpg" alt="Gabija Malina in her studio, surrounded by portrait paintings and drawings">
+    <div class="about-hero-copy">
+      <p class="hero-eyebrow">Apie</p>
+      <h1>Tapyti žmones, kurti pasaulius.</h1>
+      <p>Mano vardas Gabija Malinauskaitė. Esu menininkė, kurianti tapybos, 3D modeliavimo ir animacijos srityse.</p>
+      <p>Mane domina žmonės, emocijos ir mažos detalės, suteikiančios kasdieniams momentams prasmę. Mane traukia portretai, personažais paremtos istorijos ir gyvenamų erdvių atmosfera - noriu perteikti ne tik tai, kaip kažkas atrodo, bet ir tai, kaip jaučiasi.</p>
+      <p>Savo kūrybinį kelią pradėjau nuo tradicinio meno, o vėliau pasukau į 3D animaciją ir studijavau Dongseo universitete Pietų Korėjoje. Skaitmeninė kūryba išmokė mane kitaip mąstyti apie meną, tačiau tapyba visada liko svarbia mano idėjų tyrinėjimo dalimi.</p>
+      <p>Kurdama 3D darbus mėgstu kurti detalias aplinkas ir personažus bei galvoti, kaip jie įsilieja į savo pasaulį. Tapyba suteikia kitokią laisvę. Tai intuityvesnis būdas tyrinėti spalvą, tekstūrą, šviesą ir žmogaus išraišką. Dažniausiai tapau aliejiniais dažais, akrilu, guašu ir pastelėmis, o ypač mėgstu patį fizinį darbo su medžiaga procesą.</p>
+      <p>Daug įkvėpimo randu pažįstamuose dalykuose: senose fotografijose, gamtoje, vietose, kurias prisimenu, ir, svarbiausia, žmonėse, kurie mane supa. Man įdomu kurti darbus, turinčius savo istoriją — tokius, kurie atrodo lyg būtų egzistavę dar prieš tau juos pamatant.</p>
+    </div>
+  </section>
+
+  <section class="about-cta wrap">
+    <p>Priimu individualius užsakymus, kviečiu bendradarbiauti ir kreiptis dėl darbų spaudinių - greičiausiai su manimi susisieksite per <a href="contact.html">kontaktų puslapį</a>.</p>
+  </section>
+
+  <section class="credentials wrap">
+    <div class="credentials-group">
+      <p class="credentials-heading">Išsilavinimas</p>
+      <ul class="credentials-list">
+        <li>
+          <p class="credentials-title">Informatikos bakalauro studijos — 3D animacija ir žaidimų kūrimas</p>
+          <p class="credentials-meta">Mykolo Romerio universitetas, Vilnius · 2021–2023<br> Dongseo universitetas, Busanas · 2023–2025</p>
+        </li>
+        <li>
+          <p class="credentials-title">Grafinio dizaino kursai</p>
+          <p class="credentials-meta">Brainnest · 2023</p>
+        </li>
+        <li>
+          <p class="credentials-title">Dailės diplomas</p>
+          <p class="credentials-meta">Algimanto Raudonikio meno mokykla, Žagarė · 2011–2017</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="credentials-group">
+      <p class="credentials-heading">Parodos ir projektai</p>
+      <ul class="credentials-list">
+        <li>
+          <p class="credentials-title"><a href="momentukininke.html">Personalinė paroda – „Momentukininkė“</a></p>
+          <p class="credentials-meta">„The Closet“ galerija, Busanas · 2025 m. balandis</p>
+        </li>
+        <li>
+          <p class="credentials-title"><a href="https://www.facebook.com/photo.php?fbid=1235346446553884&set=a.1235346339887228&type=3">Personalinė paroda — „Draugų portretai“</a></p>
+          <p class="credentials-meta">Skaistgirio gimnazija · 2017</p>
+        </li>
+        <li>
+          <p class="credentials-title"><a href="https://youtu.be/384IctD9Y6s">Trumpametražis 3D animacinis filmas — „Puddles“</a></p>
+          <p class="credentials-meta">Dongseo universitetas, Busanas · 2025</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="credentials-group">
+      <p class="credentials-heading">Programos</p>
+      <ul class="credentials-list">
+        <li>
+          
+          <p class="credentials-software">Blender · Maya · ZBrush</p>
+	  <p class="credentials-meta">Modeliavimas, riggingas ir animacija</p>
+        </li>
+        <li>
+          
+          <p class="credentials-software">Substance Painter · Photoshop</p>
+	  <p class="credentials-meta">Tekstūravimas</p>
+        </li>
+        <li>
+
+          <p class="credentials-software">Unity · Unreal Engine</p>
+          <p class="credentials-meta">Scenų komponavimas ir renderinimas</p>       
+ 	</li>
+        <li>
+
+          <p class="credentials-software">After Effects · Premiere Pro · Houdini · Nuke X</p>
+          <p class="credentials-meta">Kompozitingas ir efektai</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Gabija Malina</p>
+    <p><a href="contact.html">Susisiekime →</a></p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

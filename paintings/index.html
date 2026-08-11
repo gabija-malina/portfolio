@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {}
+})();
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/icon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../images/favicon/icon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../images/favicon/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+<link rel="canonical" href="https://gabijamalina.com/paintings/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paintings — Gabija Malina</title>
 <meta name="description" content="Oil and acrylic paintings by Gabija Malina.">
@@ -24,7 +40,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="../index.html">Gabija Malina<span>.</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <div class="nav-wrap">
     <nav class="primary">
       <a href="../index.html">Home</a>
       <a href="index.html" aria-current="page">Paintings</a>
@@ -33,6 +49,18 @@
       <a href="../about.html">About</a>
       <a href="../contact.html">Find Me</a>
     </nav>
+      <div class="lang-switch" aria-label="Language">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.6 3.8 5.8 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.8-3.8-9s1.4-6.4 3.8-9z"/></svg>
+        <span class="lang-current">EN</span>
+        <span class="lang-sep">/</span>
+        <a href="../lt/paintings/index.html">LT</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme-toggle>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 

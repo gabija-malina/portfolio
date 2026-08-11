@@ -1,3 +1,20 @@
+// Dark mode toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.querySelector('[data-theme-toggle]');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        try { localStorage.setItem('theme', 'light'); } catch (e) {}
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+      }
+    });
+  }
+});
+
 // Mobile nav toggle
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
@@ -91,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     imageCount = 0;
   }
 
-  document.querySelectorAll('.piece, .artwork-grid figure, .artwork-columns figure, .exhibition-article .grid-item').forEach((piece) => {
+  document.querySelectorAll('.piece, .artwork-grid figure, .artwork-columns figure, .feature-pair figure, .exhibition-article .grid-item').forEach((piece) => {
     piece.setAttribute('tabindex', '0');
     piece.setAttribute('role', 'button');
     piece.addEventListener('click', () => openLightbox(piece));
