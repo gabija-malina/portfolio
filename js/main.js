@@ -30,6 +30,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Exhibition page: reveal catalogue sections gently as they enter the
+  // viewport, and replace any unfinished date placeholders with the era
+  // heading that already supplies the correct context.
+  document.querySelectorAll('.timeline-era').forEach((era) => {
+    const eraLabel = era.querySelector('h3')?.textContent.trim();
+    if (!eraLabel) return;
+    era.querySelectorAll('.cap-meta').forEach((meta) => {
+      meta.textContent = meta.textContent.replace(/\bYear\b/g, eraLabel);
+    });
+  });
+
+  const revealItems = document.querySelectorAll('.reveal-on-scroll');
+  if (revealItems.length) {
+    document.body.classList.add('reveal-ready');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+  }
+
   // Lightbox for gallery pieces
   const lightbox = document.querySelector('.lightbox');
   if (!lightbox) return;
@@ -58,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = piece.querySelector('.title')?.textContent || '';
     const meta = piece.querySelector('.meta')?.textContent || '';
     const figcap = piece.querySelector('figcaption')?.textContent || '';
+    const thumb = piece.querySelector('img');
 
     // Pieces can list multiple images to scroll through via
     // data-images='["a.jpg","b.jpg"]'. Falls back to the single
@@ -67,9 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
       try { images = JSON.parse(piece.dataset.images); } catch (e) { images = []; }
     }
     if (!images.length) {
-      const thumb = piece.querySelector('img');
       if (thumb) images = [thumb.src];
     }
+
+    // Open the carousel on the exact thumbnail that was selected.
+    // Comparing absolute URLs keeps this reliable across language pages
+    // with different relative path depths.
+    const normalizeUrl = (src) => {
+      try { return new URL(src, document.baseURI).href; } catch (e) { return src; }
+    };
+    const thumbUrl = thumb ? normalizeUrl(thumb.currentSrc || thumb.src) : '';
+    const matchingIndex = images.findIndex((src) => normalizeUrl(src) === thumbUrl);
+    const startIndex = matchingIndex >= 0 ? matchingIndex : 0;
 
     track.innerHTML = '';
     dotsWrap.innerHTML = '';
@@ -88,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.setAttribute('aria-label', `View image ${i + 1} of ${images.length}`);
-        if (i === 0) dot.classList.add('active');
+        if (i === startIndex) dot.classList.add('active');
         dot.addEventListener('click', () => {
           track.scrollTo({ left: track.clientWidth * i, behavior: 'smooth' });
         });
@@ -98,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     caption.textContent = (title || meta) ? [title, meta].filter(Boolean).join(' — ') : figcap;
     lightbox.classList.add('open');
+    requestAnimationFrame(() => {
+      track.scrollLeft = track.clientWidth * startIndex;
+    });
     closeBtn.focus();
   }
 
@@ -108,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     imageCount = 0;
   }
 
-  document.querySelectorAll('.piece, .artwork-grid figure, .artwork-columns figure, .feature-pair figure, .exhibition-article .grid-item').forEach((piece) => {
+  document.querySelectorAll('.piece, .project-shot, .artwork-gallery figure, .featured-artworks figure, .artwork-grid figure, .artwork-columns figure, .feature-pair figure, .exhibition-article .grid-item').forEach((piece) => {
     piece.setAttribute('tabindex', '0');
     piece.setAttribute('role', 'button');
     piece.addEventListener('click', () => openLightbox(piece));
