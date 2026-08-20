@@ -21,15 +21,15 @@
 }
 
 html[data-theme="dark"] {
-  --paper: #15151a;
-  --canvas: #1c1c21;
-  --ink: #f2f0ea;
-  --ink-soft: #c8c5bc;
-  --stone: #9b978d;
-  --line: #303035;
-  --verdigris: #6b9686;
-  --oxide: #d97a52;
-  --header-bg: rgba(21, 21, 26, 0.88);
+  --paper: #1b1613;
+  --canvas: #251d19;
+  --ink: #f3ede4;
+  --ink-soft: #d0c3b7;
+  --stone: #a89586;
+  --line: #3b2f29;
+  --verdigris: #789b8d;
+  --oxide: #d77a55;
+  --header-bg: rgba(27, 22, 19, 0.9);
 }
 
 * { box-sizing: border-box; }
@@ -632,8 +632,14 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 .credentials {
   padding: clamp(40px, 6vw, 64px) var(--gutter) clamp(64px, 9vw, 96px);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr) minmax(0, 0.95fr);
   gap: clamp(32px, 5vw, 56px);
+}
+
+@media (min-width: 801px) {
+  .credentials-group:nth-child(2) {
+    transform: translateX(clamp(12px, 1.25vw, 24px));
+  }
 }
 
 @media (max-width: 800px) {
@@ -673,6 +679,57 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
   color: var(--stone);
   margin: 0 0 4px;
   line-height: 1.5;
+}
+
+.joint-programme {
+  padding: 18px 0 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.joint-programme-label {
+  margin: 0 0 8px;
+  color: var(--verdigris);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.joint-programme-title {
+  max-width: 25ch;
+  font-size: clamp(1.08rem, 1.3vw, 1.28rem);
+  line-height: 1.22;
+  margin-bottom: 17px;
+}
+
+.degree-awards {
+  display: grid;
+  gap: 14px;
+}
+
+.degree-award {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.degree-award-number {
+  padding-top: 3px;
+  color: var(--verdigris);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.degree-award-title {
+  margin: 0 0 2px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.25;
 }
 
 .credentials-software {
@@ -1315,7 +1372,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 }
 
 html[data-theme="dark"] .project-shot figcaption {
-  background: rgba(21,21,26,0.96);
+  background: rgba(27,22,19,0.96);
 }
 
 .project-shot:hover figcaption,
@@ -2281,4 +2338,216 @@ html[data-theme="dark"] .project-shot figcaption {
   font-size: clamp(1.5rem, 2.5vw, 2.35rem);
   font-style: italic;
   line-height: 1.22;
+}
+
+/* ============================================================
+   Paintings — curated editorial layout
+   ============================================================ */
+.paintings-page {
+  overflow-x: hidden;
+}
+
+.paintings-intro {
+  padding: clamp(44px, 6vw, 82px) 0 clamp(32px, 5vw, 64px);
+}
+
+.paintings-intro .hero-eyebrow {
+  margin: 0 0 14px;
+}
+
+.paintings-intro h1 {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4.4vw, 4.5rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.paintings-intro p:last-child {
+  max-width: none;
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.paintings-showcase {
+  display: grid;
+  gap: clamp(38px, 4vw, 64px);
+  padding-bottom: clamp(72px, 9vw, 124px);
+}
+
+.paintings-showcase .piece {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+
+.paintings-showcase .piece img {
+  width: 100%;
+  height: auto;
+}
+
+.paintings-showcase .piece .label {
+  padding: 52px 18px 16px;
+  color: #fffaf3;
+  border: 0;
+  background: linear-gradient(to top, rgba(24, 15, 11, 0.9) 0%, rgba(24, 15, 11, 0.62) 48%, rgba(24, 15, 11, 0) 100%);
+}
+
+.paintings-showcase .piece .label .title {
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+}
+
+.paintings-showcase .piece .label .meta {
+  color: rgba(255, 250, 243, 0.78);
+}
+
+.paintings-lead,
+.paintings-wide {
+  width: 100%;
+}
+
+.paintings-row {
+  display: grid;
+  align-items: start;
+  gap: clamp(18px, 1.8vw, 28px);
+}
+
+.paintings-row--portraits {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+}
+
+.paintings-row--triptych {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.paintings-row--still-life {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: end;
+}
+
+.paintings-row--landscapes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.paintings-section-heading {
+  padding-top: clamp(8px, 1vw, 16px);
+}
+
+.paintings-section-heading .hero-eyebrow {
+  margin: 0 0 10px;
+}
+
+.paintings-section-heading p:last-child {
+  max-width: none;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+@media (hover: none) {
+  .paintings-showcase .piece .label {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .paintings-intro h1 {
+    font-size: clamp(2.35rem, 12vw, 3.6rem);
+  }
+
+  .paintings-showcase {
+    gap: 30px;
+  }
+
+  .paintings-row--portraits,
+  .paintings-row--still-life,
+  .paintings-row--landscapes {
+    grid-template-columns: 1fr;
+    max-width: none;
+    gap: 18px;
+  }
+
+  .paintings-row--triptych {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .paintings-showcase .piece .label {
+    padding: 44px 14px 12px;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    margin-right: 96px;
+  }
+}
+
+/* Shared dark-gradient artwork captions across every portfolio gallery. */
+.piece .label,
+.artwork-grid figcaption,
+.artwork-columns figcaption,
+.feature-pair figcaption,
+.project-shot figcaption,
+.exhibition-timeline .featured-artworks figcaption,
+.exhibition-timeline .artwork-gallery figcaption {
+  padding: 48px 16px 14px;
+  color: #fffaf3;
+  border: 0;
+  background: linear-gradient(
+    to top,
+    rgba(24, 15, 11, 0.92) 0%,
+    rgba(24, 15, 11, 0.68) 48%,
+    rgba(24, 15, 11, 0) 100%
+  );
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .project-shot figcaption {
+  background: linear-gradient(
+    to top,
+    rgba(15, 9, 7, 0.94) 0%,
+    rgba(15, 9, 7, 0.7) 48%,
+    rgba(15, 9, 7, 0) 100%
+  );
+}
+
+.piece .label .title,
+.project-shot figcaption .title,
+.artwork-grid figcaption .cap-title,
+.artwork-columns figcaption .cap-title,
+.feature-pair figcaption .cap-title,
+.exhibition-timeline .featured-artworks .cap-title,
+.exhibition-timeline .artwork-gallery .cap-title {
+  color: #fffaf3;
+}
+
+.piece .label .meta,
+.project-shot figcaption .meta,
+.artwork-grid figcaption .cap-meta,
+.artwork-columns figcaption .cap-meta,
+.feature-pair figcaption .cap-meta,
+.exhibition-timeline .featured-artworks .cap-meta,
+.exhibition-timeline .artwork-gallery .cap-meta {
+  color: rgba(255, 250, 243, 0.76);
+}
+
+@media (hover: none) {
+  .piece .label,
+  .artwork-grid figcaption,
+  .artwork-columns figcaption,
+  .feature-pair figcaption,
+  .project-shot figcaption,
+  .exhibition-timeline .featured-artworks figcaption,
+  .exhibition-timeline .artwork-gallery figcaption {
+    position: absolute;
+    transform: translateY(0);
+  }
 }
