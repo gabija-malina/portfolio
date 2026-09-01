@@ -110,7 +110,20 @@
       <div class="project-copy-grid"><div><h3>From memory to environment</h3><p>The composition reflects the cramped but functional planning of a Soviet kitchen. A small table, cabinets and gas stove define the room, while previously modeled family objects create a personal, lived-in atmosphere.</p></div><div><h3>Surface and light</h3><p>Consistent texel density was organized across the room, furniture and small props. In Substance Painter, peeling paint, worn metal and a floral plastic tablecloth were built from real references. Separate Unreal Engine lighting setups create warm daytime and darker night moods.</p></div></div>
       <div class="project-media-grid">
         <figure class="project-shot project-shot--large" data-images='["../images/3d-work/soviet-kitchen-hero.jpg","../images/3d-work/soviet-kitchen-sunlight.jpg","../images/3d-work/soviet-kitchen-night.png","../images/3d-work/soviet-kitchen-blockout.jpg"]'><img src="../images/3d-work/soviet-kitchen-night.png" alt="Night lighting variation of the kitchen"><figcaption><span class="title">Night lighting</span><span class="meta">Unreal Engine · Lumen</span></figcaption></figure>
-        <figure class="project-shot project-shot--small" data-images='["../images/3d-work/soviet-kitchen-hero.jpg","../images/3d-work/soviet-kitchen-sunlight.jpg","../images/3d-work/soviet-kitchen-night.png","../images/3d-work/soviet-kitchen-blockout.jpg"]'><img src="../images/3d-work/soviet-kitchen-blockout.jpg" alt="Wireframe blockout of the kitchen environment"><figcaption><span class="title">Blockout</span><span class="meta">Maya</span></figcaption></figure>
+        <figure class="project-shot project-shot--small project-shot--viewer">
+          <div class="wireframe-viewer" data-model="test.glb" aria-label="Interactive wireframe model of the Soviet Kitchen">
+            <div class="wireframe-viewer__stage"></div>
+            <div class="wireframe-viewer__status" role="status" aria-live="polite">Loading 3D model…</div>
+            <div class="wireframe-viewer__toolbar" aria-label="3D viewer display controls">
+              <button type="button" class="is-active" data-view-mode="wireframe" aria-pressed="true">Wireframe</button>
+              <button type="button" data-view-mode="shaded" aria-pressed="false">Shaded</button>
+              <button type="button" data-view-reset>Reset view</button>
+            </div>
+            <p class="wireframe-viewer__hint">Drag to rotate · Scroll to zoom</p>
+            <noscript><p class="wireframe-viewer__fallback">Enable JavaScript to explore this 3D model.</p></noscript>
+          </div>
+          <figcaption><span class="title">Interactive blockout</span><span class="meta">Drag to explore</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -151,6 +164,25 @@
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged project image"><button class="lightbox-close" aria-label="Close">✕</button><button class="lightbox-prev" aria-label="Previous image">‹</button><button class="lightbox-next" aria-label="Next image">›</button><div class="lightbox-track"></div><p class="lightbox-caption"></p><div class="lightbox-dots"></div></div>
 
 <footer class="site-footer"><div class="wrap"><p>&copy; <span id="year"></span> Gabija Malina</p><p><a href="../contact.html">Contact →</a></p></div></footer>
+<script>
+(function () {
+  if (window.location.protocol !== 'file:') return;
+  var viewer = document.querySelector('.wireframe-viewer');
+  if (!viewer) return;
+  var status = viewer.querySelector('.wireframe-viewer__status');
+  if (status) status.textContent = 'Open this site with a local web server to load the 3D model.';
+  viewer.querySelectorAll('button').forEach(function (button) { button.disabled = true; });
+})();
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="../js/model-viewer.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

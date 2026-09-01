@@ -1427,6 +1427,122 @@ html[data-theme="dark"] .project-shot figcaption {
 .project-media-grid .project-shot img { aspect-ratio: 4 / 3; }
 .project-media-grid .project-shot--portrait img { object-fit: contain; }
 
+/* Interactive 3D portfolio viewer */
+.project-shot--viewer {
+  cursor: default;
+  min-height: 0;
+  background: #a8aaa7;
+}
+
+.wireframe-viewer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 48% 42%, rgba(255,255,255,0.2), transparent 58%),
+    #929590;
+  color: #fdfdfb;
+}
+
+.wireframe-viewer__stage,
+.wireframe-viewer__stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wireframe-viewer__stage canvas {
+  cursor: grab;
+  touch-action: none;
+  outline: none;
+}
+
+.wireframe-viewer__stage canvas:active { cursor: grabbing; }
+
+.wireframe-viewer__stage canvas:focus-visible {
+  box-shadow: inset 0 0 0 3px rgba(253,253,251,0.88);
+}
+
+.wireframe-viewer__status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(31,31,34,0.34);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.wireframe-viewer__status.is-hidden {
+  opacity: 0;
+}
+
+.wireframe-viewer__toolbar {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.wireframe-viewer__toolbar button {
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,0.48);
+  border-radius: 2px;
+  background: rgba(24,20,19,0.7);
+  color: #fdfdfb;
+  font: 500 0.65rem/1 var(--mono);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  backdrop-filter: blur(7px);
+}
+
+.wireframe-viewer__toolbar button:hover,
+.wireframe-viewer__toolbar button:focus-visible,
+.wireframe-viewer__toolbar button.is-active {
+  border-color: #fdfdfb;
+  background: #fdfdfb;
+  color: #1b1613;
+}
+
+.wireframe-viewer__toolbar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.wireframe-viewer__hint,
+.wireframe-viewer__fallback {
+  position: absolute;
+  right: 12px;
+  bottom: 58px;
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 2px;
+  background: rgba(24,20,19,0.68);
+  color: rgba(253,253,251,0.9);
+  font: 0.62rem/1.35 var(--mono);
+  pointer-events: none;
+  backdrop-filter: blur(7px);
+}
+
+.project-shot--viewer figcaption {
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .wireframe-viewer__toolbar { top: 8px; left: 8px; }
+  .wireframe-viewer__toolbar button { min-height: 32px; padding: 6px 8px; }
+  .wireframe-viewer__hint { right: 8px; bottom: 54px; }
+}
+
 .project-media-grid--three .project-shot {
   grid-column: span 4;
 }

@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     imageCount = 0;
   }
 
-  document.querySelectorAll('.piece, .project-shot, .artwork-gallery figure, .featured-artworks figure, .artwork-grid figure, .artwork-columns figure, .feature-pair figure, .exhibition-article .grid-item').forEach((piece) => {
+  document.querySelectorAll('.piece, .project-shot:not(.project-shot--viewer), .artwork-gallery figure, .featured-artworks figure, .artwork-grid figure, .artwork-columns figure, .feature-pair figure, .exhibition-article .grid-item').forEach((piece) => {
     piece.setAttribute('tabindex', '0');
     piece.setAttribute('role', 'button');
     piece.addEventListener('click', () => openLightbox(piece));

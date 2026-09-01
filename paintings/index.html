@@ -85,7 +85,9 @@
   line-height: 1;
 }
 .paintings-row--equal { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
-.paintings-gallery .piece img { display: block; width: 100%; height: auto; object-fit: contain; }
+.paintings-gallery .piece img { display: block; width: 100%; height: auto; object-fit: cover; }
+.paintings-gallery .piece--portrait img { aspect-ratio: 3 / 4; }
+.paintings-gallery .piece--landscape img { aspect-ratio: 4 / 3; }
 @media (max-width: 760px) {
   .paintings-editorial-intro .wrap,
   .paintings-section-label { grid-template-columns: 1fr; gap: 16px; }
@@ -158,32 +160,32 @@
   </section>
 
   <section class="paintings-showcase paintings-gallery wrap" aria-label="Selected paintings">
-    <figure class="piece paintings-lead" data-images='["../images/paintings/dinner-interior.jpg"]'>
+    <figure class="piece piece--landscape paintings-lead" data-images='["../images/paintings/dinner-interior.jpg"]'>
       <img src="../images/paintings/dinner-interior.jpg" alt="Dinner interior painting by Gabija Malina" width="2200" height="1504" fetchpriority="high">
       <figcaption class="label"><p class="title">Dinner</p><p class="meta">Interior painting</p></figcaption>
     </figure>
-    <figure class="piece paintings-wide" data-images='["../images/paintings/hands-interior-study.jpg"]'>
+    <figure class="piece piece--landscape paintings-wide" data-images='["../images/paintings/hands-interior-study.jpg"]'>
       <img src="../images/paintings/hands-interior-study.jpg" alt="Painting of intertwined hands in an interior by Gabija Malina" width="2200" height="1592" loading="lazy">
       <figcaption class="label"><p class="title">Hands</p><p class="meta">Interior study</p></figcaption>
     </figure>
 
     <header class="paintings-section-label"><p class="hero-eyebrow">01 / People</p><h2>Portraits</h2></header>
     <div class="paintings-row paintings-row--equal">
-      <figure class="piece" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
+      <figure class="piece piece--portrait" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
         <img src="../images/paintings/portrait-in-blue-hat.jpg" alt="Portrait of a woman in a blue hat by Gabija Malina" width="2482" height="3446" loading="lazy">
         <figcaption class="label"><p class="title">Portrait in a Blue Hat</p><p class="meta">Portrait study</p></figcaption>
       </figure>
-      <figure class="piece" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
+      <figure class="piece piece--portrait" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
         <img src="../images/paintings/piece-01.jpg" alt="Portrait of a woman holding her dog by Gabija Malina" width="1417" height="1984" loading="lazy">
         <figcaption class="label"><p class="title">Portrait with Dog</p><p class="meta">Commissioned portrait</p></figcaption>
       </figure>
     </div>
     <div class="paintings-row paintings-row--equal">
-      <figure class="piece" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
+      <figure class="piece piece--portrait" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
         <img src="../images/paintings/holding-on.jpg" alt="Holding On, a figurative painting by Gabija Malina" width="1600" height="2200" loading="lazy">
         <figcaption class="label"><p class="title">Holding On</p><p class="meta">Oil pastel &amp; pencil</p></figcaption>
       </figure>
-      <figure class="piece" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
+      <figure class="piece piece--portrait" data-images='["../images/paintings/portrait-in-blue-hat.jpg","../images/paintings/piece-01.jpg","../images/paintings/holding-on.jpg","../images/paintings/portrait-seated-man.jpg"]'>
         <img src="../images/paintings/portrait-seated-man.jpg" alt="Seated man portrait painting by Gabija Malina" width="2484" height="3236" loading="lazy">
         <figcaption class="label"><p class="title">Seated Portrait</p><p class="meta">Portrait study</p></figcaption>
       </figure>
@@ -191,25 +193,25 @@
 
     <header class="paintings-section-label"><p class="hero-eyebrow">02 / Objects</p><h2>Still-life studies</h2></header>
     <div class="paintings-row paintings-row--triptych">
-      <figure class="piece" data-images='["../images/paintings/still-life-pears.jpg","../images/paintings/still-life-oranges.jpg","../images/paintings/still-life-apples.jpg"]'>
+      <figure class="piece piece--landscape" data-images='["../images/paintings/still-life-pears.jpg","../images/paintings/still-life-oranges.jpg","../images/paintings/still-life-apples.jpg"]'>
         <img src="../images/paintings/still-life-pears.jpg" alt="Still-life painting of pears by Gabija Malina" width="1155" height="802" loading="lazy">
         <figcaption class="label"><p class="title">Pears</p><p class="meta">Still-life study</p></figcaption>
       </figure>
-      <figure class="piece" data-images='["../images/paintings/still-life-pears.jpg","../images/paintings/still-life-oranges.jpg","../images/paintings/still-life-apples.jpg"]'>
+      <figure class="piece piece--landscape" data-images='["../images/paintings/still-life-pears.jpg","../images/paintings/still-life-oranges.jpg","../images/paintings/still-life-apples.jpg"]'>
         <img src="../images/paintings/still-life-oranges.jpg" alt="Still-life painting of oranges by Gabija Malina" width="1346" height="1000" loading="lazy">
         <figcaption class="label"><p class="title">Oranges</p><p class="meta">Still-life study</p></figcaption>
       </figure>
-      <figure class="piece" data-images='["../images/paintings/still-life-pears.jpg","../images/paintings/still-life-oranges.jpg","../images/paintings/still-life-apples.jpg"]'>
+      <figure class="piece piece--landscape" data-images='["../images/paintings/still-life-pears.jpg","../images/paintings/still-life-oranges.jpg","../images/paintings/still-life-apples.jpg"]'>
         <img src="../images/paintings/still-life-apples.jpg" alt="Still-life painting of apples by Gabija Malina" width="1358" height="1028" loading="lazy">
         <figcaption class="label"><p class="title">Apples</p><p class="meta">Still-life study</p></figcaption>
       </figure>
     </div>
     <div class="paintings-row paintings-row--equal">
-      <figure class="piece" data-images='["../images/paintings/still-life-glass-jars.jpg","../images/paintings/still-life-glass-bottles.jpg"]'>
+      <figure class="piece piece--landscape" data-images='["../images/paintings/still-life-glass-jars.jpg","../images/paintings/still-life-glass-bottles.jpg"]'>
         <img src="../images/paintings/still-life-glass-jars.jpg" alt="Still-life painting of two glass jars by Gabija Malina" width="2200" height="1898" loading="lazy">
         <figcaption class="label"><p class="title">Glass Jars</p><p class="meta">Still-life study</p></figcaption>
       </figure>
-      <figure class="piece" data-images='["../images/paintings/still-life-glass-jars.jpg","../images/paintings/still-life-glass-bottles.jpg"]'>
+      <figure class="piece piece--landscape" data-images='["../images/paintings/still-life-glass-jars.jpg","../images/paintings/still-life-glass-bottles.jpg"]'>
         <img src="../images/paintings/still-life-glass-bottles.jpg" alt="Still-life painting of glass bottles by Gabija Malina" width="1676" height="1180" loading="lazy">
         <figcaption class="label"><p class="title">Glass Bottles</p><p class="meta">Still-life study</p></figcaption>
       </figure>
@@ -217,11 +219,11 @@
 
     <header class="paintings-section-label"><p class="hero-eyebrow">03 / Place</p><h2>Landscapes</h2></header>
     <div class="paintings-row paintings-row--equal">
-      <figure class="piece" data-images='["../images/paintings/coastal-sunset.jpg","../images/paintings/sunset-road.jpg"]'>
+      <figure class="piece piece--portrait" data-images='["../images/paintings/coastal-sunset.jpg","../images/paintings/sunset-road.jpg"]'>
         <img src="../images/paintings/coastal-sunset.jpg" alt="Coastal sunset painting by Gabija Malina" width="1714" height="2200" loading="lazy">
         <figcaption class="label"><p class="title">Coastal Sunset</p><p class="meta">Landscape study</p></figcaption>
       </figure>
-      <figure class="piece" data-images='["../images/paintings/coastal-sunset.jpg","../images/paintings/sunset-road.jpg"]'>
+      <figure class="piece piece--portrait" data-images='["../images/paintings/coastal-sunset.jpg","../images/paintings/sunset-road.jpg"]'>
         <img src="../images/paintings/sunset-road.jpg" alt="Sunset road painting by Gabija Malina" width="1555" height="2200" loading="lazy">
         <figcaption class="label"><p class="title">Sunset Road</p><p class="meta">Landscape study</p></figcaption>
       </figure>
