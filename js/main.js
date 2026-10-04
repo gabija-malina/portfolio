@@ -58,6 +58,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Play project films only while their player is in view.
+  const projectVideos = document.querySelectorAll('.project-video video');
+  if (projectVideos.length && 'IntersectionObserver' in window) {
+    const userPausedVideos = new WeakSet();
+    const outsideVideos = new WeakSet(projectVideos);
+    projectVideos.forEach((video) => {
+      video.muted = true;
+      video.addEventListener('pause', () => {
+        if (!outsideVideos.has(video) && !document.hidden && !video.ended) {
+          userPausedVideos.add(video);
+        }
+      });
+      video.addEventListener('play', () => userPausedVideos.delete(video));
+    });
+    const playVisibleVideo = (video) => {
+      if (document.hidden || userPausedVideos.has(video) || video.ended) return;
+      video.play().catch(() => {});
+    };
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(({ target: video, isIntersecting, intersectionRatio }) => {
+        if (isIntersecting && intersectionRatio >= 0.35) {
+          outsideVideos.delete(video);
+          playVisibleVideo(video);
+        } else {
+          outsideVideos.add(video);
+          video.pause();
+        }
+      });
+    }, { threshold: [0, 0.35] });
+    projectVideos.forEach((video) => videoObserver.observe(video));
+    document.addEventListener('visibilitychange', () => {
+      projectVideos.forEach((video) => {
+        if (document.hidden) video.pause();
+        else if (!outsideVideos.has(video)) playVisibleVideo(video);
+      });
+    });
+  }
+
   // Lightbox for gallery pieces
   const lightbox = document.querySelector('.lightbox');
   if (!lightbox) return;
@@ -90,8 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function openLightbox(piece) {
-    const title = piece.querySelector('.title')?.textContent || '';
-    const meta = piece.querySelector('.meta')?.textContent || '';
+    const title = piece.querySelector('.title, .cap-title')?.textContent.trim() || '';
+    const meta = piece.querySelector('.meta, .cap-meta')?.textContent.trim() || '';
     const figcap = piece.querySelector('figcaption')?.textContent || '';
     const thumb = piece.querySelector('img');
 
@@ -115,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
     slides = gallery ? [...gallery.querySelectorAll('.piece')].flatMap((item) => {
       const image = item.querySelector('img');
       if (!image) return [];
-      const itemTitle = item.querySelector('.title')?.textContent || '';
-      const itemMeta = item.querySelector('.meta')?.textContent || '';
+      const itemTitle = item.querySelector('.title, .cap-title')?.textContent.trim() || '';
+      const itemMeta = item.querySelector('.meta, .cap-meta')?.textContent.trim() || '';
       return [{
         src: image.currentSrc || image.src,
         alt: image.alt || itemTitle,
