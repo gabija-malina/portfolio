@@ -1,48 +1,25 @@
-# Portfolio Site
+# Gabija Malina portfolio
 
-A static portfolio for paintings and 3D work. No build step, no backend — plain HTML/CSS/JS.
+Static HTML, CSS and JavaScript, published using GitHub Pages at https://gabijamalina.com/. Porkbun manages the domain.
 
-## Structure
+## Local preview
 
-```
-index.html          Home — intro + links into the two galleries
-paintings/          Paintings gallery
-3d-work/             3D work gallery
-about.html          Bio / artist statement
-contact.html        Links to find you (email, Instagram, ArtStation, etc.)
-css/style.css       All styling
-js/main.js          Mobile nav, lightbox, footer year
-images/             Placeholder images — replace these with your own work
-```
+From this folder run `python -m http.server 8765 --bind 127.0.0.1`, then visit http://127.0.0.1:8765/.
 
-## Before you launch
+## Publish
 
-1. **Replace every placeholder image** in `images/paintings/` and `images/3d-work/` with your own photos/renders. Keep the same filenames or update the `src` in the matching HTML file.
-2. **Update the text**: your name (currently "Ari Kovac"), the bio on `about.html`, artwork titles/mediums/years in the gallery captions, and every link + email address on `contact.html`.
-3. **Replace `yourdomain.com`** in `robots.txt` and the `mailto:` links with your real domain/email.
-4. Optionally compress images before uploading (see Performance below) — large photos will slow the site down.
+Upload the site contents to the root of the existing GitHub Pages publishing source. Include CNAME, .nojekyll, robots.txt, sitemap.xml, css/, js/, images/, paintings/, 3d-work/ and lt/. Preserve the existing repository and Pages publishing settings. Do not upload work/ scratch files. Wait for the Pages deployment to finish before checking live URLs.
 
-## Publishing with GitHub Pages + your domain
+The CNAME must remain `gabijamalina.com`. The preferred URLs are https://gabijamalina.com/, /paintings/, /3d-work/, /momentukininke.html, /about.html and /contact.html. The index.html variants can remain accessible with canonical tags; internal English links use the preferred directory URLs.
 
-1. Push this folder to your GitHub repo (root of the repo, or a `docs/` folder — either works, just set it in step 2).
-2. In the repo: **Settings → Pages** → set the source branch/folder → save.
-3. In **Settings → Pages → Custom domain**, enter your domain and save. GitHub will create a `CNAME` file in your repo automatically — don't delete it.
-4. At your domain registrar, point DNS to GitHub Pages:
-   - For an apex domain (`yourdomain.com`): four `A` records pointing to GitHub's IPs (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`).
-   - For a `www` subdomain: a `CNAME` record pointing to `yourusername.github.io`.
-5. Once DNS propagates (can take a few hours), go back to **Settings → Pages** and check **Enforce HTTPS**.
+## Sitemap maintenance
 
-## Security checklist
+When adding or renaming images, update sitemap.xml to use files that exist and are displayed on their page. Update lastmod only after a meaningful page change. Do not include 404 pages, backups or unfinished translation pages. English pages and the existing Lithuanian exhibition remain in the current sitemap. Other Lithuanian content is outside the current English editing scope.
 
-- [ ] **Enforce HTTPS** is checked in GitHub Pages settings (step 5 above) — this is the main thing that makes the site "safe" for visitors.
-- [ ] No API keys, passwords, or personal documents anywhere in the repo — this is a public repo by default on GitHub Pages, so anything committed is visible to anyone.
-- [ ] If you ever add a contact form, use a third-party handler (Formspree, Web3Forms) instead of your own backend — keeps you from managing servers or databases at all.
-- [ ] Enable **DNSSEC** at your domain registrar if it's offered.
-- [ ] Consider adding a **CAA record** at your DNS provider limiting certificate issuance to Let's Encrypt (`letsencrypt.org`), which is what GitHub Pages uses.
-- [ ] Keep any real, high-resolution source files (originals, PSD/Blend files) out of the repo/images folder — only export the compressed web versions you're comfortable with people right-clicking and saving.
-- [ ] Turn on two-factor authentication on your GitHub account, since it now controls a live public domain.
+## Search Console after publishing
 
-## Performance (optional but recommended)
+Submit https://gabijamalina.com/sitemap.xml. Inspect https://gabijamalina.com/ and important preferred HTTPS pages, use Test Live URL, then Request Indexing if needed. The HTTP and www variants should redirect to the preferred HTTPS host. Their "Page with redirect" status is expected; do not remove correct redirects to make that category disappear.
 
-- Export gallery images at roughly 1200–1600px on the long edge, JPEG quality ~80 — full-res camera/render exports will make the site slow.
-- Keep file sizes under ~400KB per image where possible.
+## Domain setup
+
+Verified on 3 October 2026: the apex has GitHub Pages' four A records, and www is a CNAME to gabija-malina.github.io. HTTPS works. HTTP and www requests return 301 to https://gabijamalina.com/. No DNS change was needed.
