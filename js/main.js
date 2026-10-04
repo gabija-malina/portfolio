@@ -70,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = lightbox.querySelector('.lightbox-next');
 
   let imageCount = 0;
+  let slides = [];
+  let wholeGallery = false;
+  let lastWheelTime = 0;
+
+  function updateCaption() {
+    caption.textContent = slides[currentIndex()]?.caption || '';
+  }
 
   function currentIndex() {
     return Math.round(track.scrollLeft / track.clientWidth);
@@ -99,6 +106,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (thumb) images = [thumb.src];
     }
 
+    const pieceCaption = (title || meta) ? [title, meta].filter(Boolean).join(' — ') : figcap;
+    const gallery = piece.closest('[data-lightbox-gallery]');
+    wholeGallery = Boolean(gallery);
+    lastWheelTime = 0;
+    // Opted-in galleries follow page order, with each artwork's own caption.
+    // Other pages retain their existing per-piece image groups.
+    slides = gallery ? [...gallery.querySelectorAll('.piece')].flatMap((item) => {
+      const image = item.querySelector('img');
+      if (!image) return [];
+      const itemTitle = item.querySelector('.title')?.textContent || '';
+      const itemMeta = item.querySelector('.meta')?.textContent || '';
+      return [{
+        src: image.currentSrc || image.src,
+        alt: image.alt || itemTitle,
+        caption: [itemTitle, itemMeta].filter(Boolean).join(' — ')
+      }];
+    }) : images.map(src => ({ src, alt: title || figcap, caption: pieceCaption }));
+    images = slides.map(slide => slide.src);
+
     // Open the carousel on the exact thumbnail that was selected.
     // Comparing absolute URLs keeps this reliable across language pages
     // with different relative path depths.
@@ -119,7 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach((src, i) => {
       const img = document.createElement('img');
       img.src = src;
-      img.alt = title || figcap;
+      img.alt = slides[i].alt;
+      img.loading = i === startIndex ? 'eager' : 'lazy';
       track.appendChild(img);
 
       if (images.length > 1) {
@@ -134,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    caption.textContent = (title || meta) ? [title, meta].filter(Boolean).join(' — ') : figcap;
+    caption.textContent = slides[startIndex]?.caption || '';
     lightbox.classList.add('open');
     requestAnimationFrame(() => {
       track.scrollLeft = track.clientWidth * startIndex;
@@ -147,6 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
     track.innerHTML = '';
     dotsWrap.innerHTML = '';
     imageCount = 0;
+    slides = [];
+    wholeGallery = false;
   }
 
   document.querySelectorAll('.piece, .project-shot:not(.project-shot--viewer), .artwork-gallery figure, .featured-artworks figure, .artwork-grid figure, .artwork-columns figure, .feature-pair figure, .exhibition-article .grid-item').forEach((piece) => {
@@ -182,6 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Mouse wheels move between artworks; horizontal trackpad gestures and
+  // touch swipes continue to use the native scrolling track.
+  track.addEventListener('wheel', (e) => {
+    if (!wholeGallery || imageCount < 2 || Math.abs(e.deltaX) >= Math.abs(e.deltaY)) return;
+    e.preventDefault();
+    const now = performance.now();
+    if (now - lastWheelTime < 400) return;
+    lastWheelTime = now;
+    goToIndex(currentIndex() + Math.sign(e.deltaY));
+  }, { passive: false });
+
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') closeLightbox();
@@ -191,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Keep the active dot in sync while scrolling through images
   track.addEventListener('scroll', () => {
+    updateCaption();
     const dots = dotsWrap.querySelectorAll('button');
     if (!dots.length) return;
     const idx = Math.round(track.scrollLeft / track.clientWidth);

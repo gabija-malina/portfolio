@@ -20,59 +20,230 @@
 <link rel="canonical" href="https://gabijamalina.com/lt/paintings/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tapyba — Gabija Malina</title>
-<meta name="description" content="Gabijos Malinos aliejiniai ir akriliniai paveikslai.">
+<meta name="description" content="Atrinkti Gabijos Malinos portretai, interjerai, peizažai ir natiurmortai.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gabijamalina.com/lt/paintings/">
 <meta property="og:title" content="Tapyba — Gabija Malina">
-<meta property="og:description" content="Gabijos Malinos aliejiniai ir akriliniai paveikslai.">
-<meta property="og:image" content="https://gabijamalina.com/images/paintings/piece-01.jpg">
+<meta property="og:description" content="Atrinkti Gabijos Malinos portretai, interjerai, peizažai ir natiurmortai.">
+<meta property="og:image" content="https://gabijamalina.com/images/paintings/tomato-eaters.jpg">
+<meta property="og:image:alt" content="Gabijos Malinos paveikslas „Pomidorų valgytojai“">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tapyba — Gabija Malina">
-<meta name="twitter:description" content="Gabijos Malinos aliejiniai ir akriliniai paveikslai.">
-<meta name="twitter:image" content="https://gabijamalina.com/images/paintings/piece-01.jpg">
+<meta name="twitter:description" content="Atrinkti Gabijos Malinos portretai, interjerai, peizažai ir natiurmortai.">
+<meta name="twitter:image" content="https://gabijamalina.com/images/paintings/tomato-eaters.jpg">
+<meta name="twitter:image:alt" content="Gabijos Malinos paveikslas „Pomidorų valgytojai“">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "url": "https://gabijamalina.com/lt/paintings/",
+  "name": "Gabijos Malinos tapyba",
+  "description": "Atrinkti Gabijos Malinos portretai, interjerai, peizažai ir natiurmortai.",
+  "creator": {"@type": "Person", "name": "Gabija Malina"},
+  "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://gabijamalina.com/images/paintings/tomato-eaters.jpg"}
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css">
+<style>
+.editorial-paintings main { overflow: hidden; }
+.paintings-editorial-intro { padding: clamp(72px, 10vw, 138px) 0 clamp(58px, 8vw, 104px); }
+.paintings-editorial-intro .wrap {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.42fr) minmax(0, 1.58fr);
+  gap: clamp(28px, 6vw, 96px);
+  align-items: start;
+}
+.paintings-editorial-intro h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+.paintings-editorial-intro .intro-copy { max-width: 780px; padding-top: 0.35em; }
+.paintings-editorial-intro .intro-copy p { margin: 20px 0 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.65; }
+.paintings-gallery { gap: clamp(42px, 5vw, 76px); }
+.paintings-section-label {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1.58fr);
+  gap: clamp(28px, 6vw, 96px);
+  align-items: baseline;
+  padding-top: clamp(20px, 3vw, 38px);
+  border-top: 1px solid var(--line);
+}
+.paintings-section-label .hero-eyebrow,
+.paintings-section-label h2 { margin: 0; }
+.paintings-section-label h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.8vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1;
+}
+.paintings-row--equal { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.paintings-gallery .piece img { display: block; width: 100%; height: auto; object-fit: cover; }
+.paintings-gallery .piece--portrait img { aspect-ratio: 3 / 4; }
+.paintings-gallery .piece--landscape img { aspect-ratio: 4 / 3; }
+@media (max-width: 760px) {
+  .paintings-editorial-intro .wrap,
+  .paintings-section-label { grid-template-columns: 1fr; gap: 16px; }
+  .paintings-editorial-intro h1 { font-size: clamp(3rem, 15vw, 4.6rem); }
+  .paintings-row--equal { grid-template-columns: 1fr; gap: 20px; }
+}
+</style>
 </head>
-<body>
+<body class="editorial-paintings">
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="../index.html">Gabija Malina<span>.</span></a>
+    <a class="brand" href="/lt/">Gabija Malina<span>.</span></a>
     <div class="nav-wrap">
-    <nav class="primary">
-      <a href="../index.html">Pagrindinis</a>
-      <a href="index.html" aria-current="page">Tapyba</a>
-      <a href="../3d-work/index.html">3D darbai</a>
-      <a href="../momentukininke.html">Parodos</a>
-      <a href="../about.html">Apie</a>
-      <a href="../contact.html">Kontaktai</a>
-    </nav>
-      <a class="lang-toggle" href="../../paintings/index.html" aria-label="Switch to English">LT</a>
-      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme-toggle>
+      <nav class="primary">
+        <a href="/lt/">Pagrindinis</a>
+        <a href="/lt/paintings/" aria-current="page">Tapyba</a>
+        <a href="/lt/3d-work/">3D darbai</a>
+        <a href="/lt/momentukininke.html">Parodos</a>
+        <a href="/lt/about.html">Apie</a>
+        <a href="/lt/contact.html">Kontaktai</a>
+      </nav>
+      <a class="lang-toggle" href="/paintings/" aria-label="Perjungti į anglų kalbą">LT</a>
+      <button class="theme-toggle" type="button" aria-label="Perjungti tamsų režimą" data-theme-toggle>
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
       </button>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <button class="nav-toggle" aria-label="Atverti meniu" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
 
 <main>
-  <section class="hero">
+  <section class="portfolio-showcase">
+    <div class="portfolio-showcase-media" aria-hidden="true">
+      <div class="showcase-track">
+        <div class="showcase-group">
+          <div class="showcase-frame"><img src="../../images/paintings/tomato-eaters.jpg" alt="" width="2200" height="1504"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/hands-interior-study.jpg" alt="" width="2200" height="1592"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/still-life-pears.jpg" alt="" width="1155" height="802"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/still-life-glass-bottles.jpg" alt="" width="1676" height="1180"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/portrait-in-blue-hat.jpg" alt="" width="2482" height="3446"></div>
+        </div>
+        <div class="showcase-group">
+          <div class="showcase-frame"><img src="../../images/paintings/tomato-eaters.jpg" alt="" width="2200" height="1504"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/hands-interior-study.jpg" alt="" width="2200" height="1592"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/still-life-pears.jpg" alt="" width="1155" height="802"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/still-life-glass-bottles.jpg" alt="" width="1676" height="1180"></div>
+          <div class="showcase-frame"><img src="../../images/paintings/portrait-in-blue-hat.jpg" alt="" width="2482" height="3446"></div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-showcase-shade"></div>
+    <div class="portfolio-showcase-content wrap">
+      <p class="hero-eyebrow">Atrinkti darbai · 2019–2025</p>
+      <h1>Tapyba, sustabdanti akimirką.</h1>
+      <p class="lede">Portretai, interjerai, peizažai ir natiurmortai, gimstantys iš spalvos, stebėjimo ir subtilių detalių, suteikiančių akimirkai asmeniškumo.</p>
+      <a class="showcase-scroll" href="#selected-work">Peržiūrėti atrinktus darbus <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <section class="paintings-editorial-intro" id="selected-work">
     <div class="wrap">
-      <p class="hero-eyebrow">LT</p>
-      <h1>Lietuviška versija ruošiama</h1>
-      <p class="lede">Šis puslapis dar neišverstas. Kol kas kviečiu apsilankyti <a href="../../paintings/index.html">angliškoje versijoje</a>.</p>
+      <p class="hero-eyebrow">Atrinkti paveikslai</p>
+      <div class="intro-copy">
+        <h1>Atidžiai stebėta,<br>neskubant prisiminta.</h1>
+        <p>Mano tapybos centre — žmonės, pažįstami interjerai ir kasdieniai daiktai. Kiekvienas kūrinys prasideda nuo stebėjimo ir tampa atmosferos, gesto bei laiko įrašu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paintings-showcase paintings-gallery wrap" aria-label="Atrinkti paveikslai" data-lightbox-gallery>
+    <figure class="piece piece--landscape paintings-lead" data-images='["../../images/paintings/tomato-eaters.jpg"]'>
+      <img src="../../images/paintings/tomato-eaters.jpg" alt="Gabijos Malinos paveikslas „Pomidorų valgytojai“" width="2200" height="1504" fetchpriority="high">
+      <figcaption class="label"><p class="title">Pomidorų Valgytojai</p><p class="meta">Aliejus ant drobės · 80×120 cm · 2026</p></figcaption>
+    </figure>
+    <figure class="piece piece--landscape paintings-wide" data-images='["../../images/paintings/hands-interior-study.jpg"]'>
+      <img src="../../images/paintings/hands-interior-study.jpg" alt="Gabijos Malinos paveikslas su susipynusiomis rankomis interjere" width="2200" height="1592" loading="lazy">
+      <figcaption class="label"><p class="title">Rankos</p><p class="meta">Interjero studija</p></figcaption>
+    </figure>
+
+    <header class="paintings-section-label"><p class="hero-eyebrow">01 / Žmonės</p><h2>Portretai</h2></header>
+    <div class="paintings-row paintings-row--equal">
+      <figure class="piece piece--portrait" data-images='["../../images/paintings/portrait-in-blue-hat.jpg","../../images/paintings/piece-01.jpg","../../images/paintings/holding-on.jpg","../../images/paintings/portrait-seated-man.jpg"]'>
+        <img src="../../images/paintings/portrait-in-blue-hat.jpg" alt="Gabijos Malinos moters su mėlyna skrybėle portretas" width="2482" height="3446" loading="lazy">
+        <figcaption class="label"><p class="title">Portretas Su Mėlyna Skrybėle</p><p class="meta">Portreto studija</p></figcaption>
+      </figure>
+      <figure class="piece piece--portrait" data-images='["../../images/paintings/portrait-in-blue-hat.jpg","../../images/paintings/piece-01.jpg","../../images/paintings/holding-on.jpg","../../images/paintings/portrait-seated-man.jpg"]'>
+        <img src="../../images/paintings/piece-01.jpg" alt="Gabijos Malinos moters su šunimi portretas" width="1417" height="1984" loading="lazy">
+        <figcaption class="label"><p class="title">Portretas Su Šunimi</p><p class="meta">Portretas pagal užsakymą</p></figcaption>
+      </figure>
+    </div>
+    <div class="paintings-row paintings-row--equal">
+      <figure class="piece piece--portrait" data-images='["../../images/paintings/portrait-in-blue-hat.jpg","../../images/paintings/piece-01.jpg","../../images/paintings/holding-on.jpg","../../images/paintings/portrait-seated-man.jpg"]'>
+        <img src="../../images/paintings/holding-on.jpg" alt="Gabijos Malinos figūrinis kūrinys „Holding On“" width="1600" height="2200" loading="lazy">
+        <figcaption class="label"><p class="title">Holding On</p><p class="meta">Aliejinė pastelė ir pieštukas</p></figcaption>
+      </figure>
+      <figure class="piece piece--portrait" data-images='["../../images/paintings/portrait-in-blue-hat.jpg","../../images/paintings/piece-01.jpg","../../images/paintings/holding-on.jpg","../../images/paintings/portrait-seated-man.jpg"]'>
+        <img src="../../images/paintings/portrait-seated-man.jpg" alt="Gabijos Malinos sėdinčio vyro portretas" width="2484" height="3236" loading="lazy">
+        <figcaption class="label"><p class="title">Sėdinčio Vyro Portretas</p><p class="meta">Portreto studija</p></figcaption>
+      </figure>
+    </div>
+
+    <header class="paintings-section-label"><p class="hero-eyebrow">02 / Daiktai</p><h2>Natiurmortų studijos</h2></header>
+    <div class="paintings-row paintings-row--triptych">
+      <figure class="piece piece--landscape" data-images='["../../images/paintings/still-life-pears.jpg","../../images/paintings/still-life-oranges.jpg","../../images/paintings/still-life-apples.jpg"]'>
+        <img src="../../images/paintings/still-life-pears.jpg" alt="Gabijos Malinos natiurmortas su kriaušėmis" width="1155" height="802" loading="lazy">
+        <figcaption class="label"><p class="title">Kriaušės</p><p class="meta">Natiurmorto studija</p></figcaption>
+      </figure>
+      <figure class="piece piece--landscape" data-images='["../../images/paintings/still-life-pears.jpg","../../images/paintings/still-life-oranges.jpg","../../images/paintings/still-life-apples.jpg"]'>
+        <img src="../../images/paintings/still-life-oranges.jpg" alt="Gabijos Malinos natiurmortas su apelsinais" width="1346" height="1000" loading="lazy">
+        <figcaption class="label"><p class="title">Apelsinai</p><p class="meta">Natiurmorto studija</p></figcaption>
+      </figure>
+      <figure class="piece piece--landscape" data-images='["../../images/paintings/still-life-pears.jpg","../../images/paintings/still-life-oranges.jpg","../../images/paintings/still-life-apples.jpg"]'>
+        <img src="../../images/paintings/still-life-apples.jpg" alt="Gabijos Malinos natiurmortas su obuoliais" width="1358" height="1028" loading="lazy">
+        <figcaption class="label"><p class="title">Obuoliai</p><p class="meta">Natiurmorto studija</p></figcaption>
+      </figure>
+    </div>
+    <div class="paintings-row paintings-row--equal">
+      <figure class="piece piece--landscape" data-images='["../../images/paintings/still-life-glass-jars.jpg","../../images/paintings/still-life-glass-bottles.jpg"]'>
+        <img src="../../images/paintings/still-life-glass-jars.jpg" alt="Gabijos Malinos natiurmortas su dviem stiklainiais" width="2200" height="1898" loading="lazy">
+        <figcaption class="label"><p class="title">Stiklainiai</p><p class="meta">Natiurmorto studija</p></figcaption>
+      </figure>
+      <figure class="piece piece--landscape" data-images='["../../images/paintings/still-life-glass-jars.jpg","../../images/paintings/still-life-glass-bottles.jpg"]'>
+        <img src="../../images/paintings/still-life-glass-bottles.jpg" alt="Gabijos Malinos natiurmortas „Buteliukų Šeimyna“" width="1676" height="1180" loading="lazy">
+        <figcaption class="label"><p class="title">Buteliukų Šeimyna</p><p class="meta">Natiurmorto studija</p></figcaption>
+      </figure>
+    </div>
+
+    <header class="paintings-section-label"><p class="hero-eyebrow">03 / Vietos</p><h2>Peizažai</h2></header>
+    <div class="paintings-row paintings-row--equal">
+      <figure class="piece piece--portrait" data-images='["../../images/paintings/coastal-sunset.jpg","../../images/paintings/sunset-road.jpg"]'>
+        <img src="../../images/paintings/coastal-sunset.jpg" alt="Gabijos Malinos pajūrio saulėlydžio paveikslas" width="1714" height="2200" loading="lazy">
+        <figcaption class="label"><p class="title">Saulėlydis Pajūryje</p><p class="meta">Peizažo studija</p></figcaption>
+      </figure>
+      <figure class="piece piece--portrait" data-images='["../../images/paintings/coastal-sunset.jpg","../../images/paintings/sunset-road.jpg"]'>
+        <img src="../../images/paintings/sunset-road.jpg" alt="Gabijos Malinos kelio saulėlydyje paveikslas" width="1555" height="2200" loading="lazy">
+        <figcaption class="label"><p class="title">Kelias Saulėlydyje</p><p class="meta">Peizažo studija</p></figcaption>
+      </figure>
     </div>
   </section>
 </main>
 
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Padidintas kūrinys">
+  <button class="lightbox-close" aria-label="Uždaryti">✕</button>
+  <button class="lightbox-prev" aria-label="Ankstesnis vaizdas">‹</button>
+  <button class="lightbox-next" aria-label="Kitas vaizdas">›</button>
+  <div class="lightbox-track"></div>
+  <p class="lightbox-caption"></p>
+  <div class="lightbox-dots"></div>
+</div>
+
 <footer class="site-footer">
   <div class="wrap">
     <p>&copy; <span id="year"></span> Gabija Malina</p>
-    <p><a href="../contact.html">Susisiekime →</a></p>
+    <p><a href="/lt/contact.html">Susisiekime →</a></p>
   </div>
 </footer>
 
